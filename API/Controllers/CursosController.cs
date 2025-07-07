@@ -20,7 +20,7 @@ namespace API.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<CursoResponseDto>>> GetCursos()
         {
-            var cursos = await _context.Cursos.Include(c => c.Docente).ToListAsync();
+            // var cursos = await _context.Cursos.Include(c => c.Docente).ToListAsync();
 
             var response = cursos.Select(c => new CursoResponseDto
             {

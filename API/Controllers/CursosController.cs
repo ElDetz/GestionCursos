@@ -15,7 +15,6 @@ namespace API.Controllers
         public CursosController(AppDbContext context)
         {
             _context = context;
-
         }
 
         // GET: api/cursos

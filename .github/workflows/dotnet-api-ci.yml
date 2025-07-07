@@ -36,4 +36,4 @@ jobs:
 
     steps:
     - name: Enviar solicitud al Deploy Hook de Render
-      run: curl -X POST "https://api.render.com/deploy/srv-d1ln8h7diees73fsf7f0?key=ap8BVL2sTGo"
+    - run: curl -X POST "${{ secrets.RENDER_DEPLOY_HOOK_URL }}"

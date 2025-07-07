@@ -1,4 +1,4 @@
-name: CI - .NET API
+name: CI/CD - .NET API
 
 on:
   push:
@@ -27,3 +27,13 @@ jobs:
 
     - name: ✅ Ejecutar pruebas
       run: dotnet test --no-build --configuration Release --verbosity normal
+
+  deploy:
+    name: 🚀 Desplegar en Render
+    needs: build-test
+    runs-on: ubuntu-latest
+    if: success()
+
+    steps:
+    - name: Enviar solicitud al Deploy Hook de Render
+      run: curl -X POST "https://api.render.com/deploy/srv-d1ln8h7diees73fsf7f0?key=ap8BVL2sTGo"

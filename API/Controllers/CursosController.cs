@@ -11,7 +11,6 @@ namespace API.Controllers
     public class CursosController : ControllerBase
     {
         private readonly AppDbContext _context;
-
         public CursosController(AppDbContext context)
         {
             _context = context;

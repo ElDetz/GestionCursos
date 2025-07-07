@@ -17,10 +17,11 @@ namespace API.Controllers
         }
 
         // GET: api/cursos
+        /*
         [HttpGet]
         public async Task<ActionResult<IEnumerable<CursoResponseDto>>> GetCursos()
         {
-            // var cursos = await _context.Cursos.Include(c => c.Docente).ToListAsync();
+            var cursos = await _context.Cursos.Include(c => c.Docente).ToListAsync();
 
             var response = cursos.Select(c => new CursoResponseDto
             {
@@ -33,6 +34,13 @@ namespace API.Controllers
             });
 
             return Ok(response);
+        }
+        */
+
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<CursoResponseDto>>> GetCursos()
+        {
+            return Ok(new List<CursoResponseDto>()); // Devuelve una lista vacía
         }
 
         // GET: api/cursos/{id}

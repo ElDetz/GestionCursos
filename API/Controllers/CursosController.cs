@@ -17,6 +17,7 @@ namespace API.Controllers
         }
 
         // GET: api/cursos
+        /*
         [HttpGet]
         public async Task<ActionResult<IEnumerable<CursoResponseDto>>> GetCursos()
         {
@@ -34,14 +35,14 @@ namespace API.Controllers
 
             return Ok(response);
         }
-
-        /*
+        */
+        
         [HttpGet]
         public async Task<ActionResult<IEnumerable<CursoResponseDto>>> GetCursos()
         {
             return Ok(new List<CursoResponseDto>()); // Devuelve una lista vacía
         }
-        */
+        
 
         // GET: api/cursos/{id}
         [HttpGet("{id}")]

@@ -21,7 +21,7 @@ namespace API.Tests
         {
             _factory = factory.WithWebHostBuilder(builder =>
             {
-                builder.UseEnvironment("Testing"); // 👈 esto activa el entorno de test
+                builder.UseEnvironment("Testing"); // Activa el entorno de test
 
                 builder.ConfigureServices(services =>
                 {

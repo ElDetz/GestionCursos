@@ -29,7 +29,6 @@ builder.Services.AddDbContext<AppDbContext>(options =>
     }
 });
 
-
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("CORS", policy =>
@@ -40,14 +39,15 @@ builder.Services.AddCors(options =>
     });
 });
 
+// Configurar puerto dinámico para Render
+var port = Environment.GetEnvironmentVariable("PORT") ?? "5000";
+builder.WebHost.UseUrls($"http://*:{port}");
+
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+// Habilitar Swagger SIEMPRE (producción y desarrollo)
+app.UseSwagger();
+app.UseSwaggerUI();
 
 app.UseHttpsRedirection();
 app.UseCors("CORS");

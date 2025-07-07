@@ -37,6 +37,7 @@ namespace API.Controllers
         }
         */
         
+
         [HttpGet]
         public async Task<ActionResult<IEnumerable<CursoResponseDto>>> GetCursos()
         {
